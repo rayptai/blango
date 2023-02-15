@@ -18,11 +18,14 @@ import dj_database_url
 
 class Dev(Configuration):
 
+  ACCOUNT_ACTIVATION_DAYS = 7
+  
   AUTH_USER_MODEL = 'blango_auth.User'
 
   # Build paths inside the project like this: BASE_DIR / 'subdir'.
   BASE_DIR = Path(__file__).resolve().parent.parent
 
+  EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
   # Quick-start development settings - unsuitable for production
   # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
